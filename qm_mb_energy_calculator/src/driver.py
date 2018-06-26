@@ -67,14 +67,16 @@ tr_set = './training_set.xyz'
 log_name = './mbdecomp.log'
 
 # Filepath to the input xyz file
-input_path = config["driver"]["input"]
+#input_path = config["driver"]["input"]
 
 """
 OPEN FILES TO READ AND WRITE
 """
 
+# TODO: We need some other way to feed in the input file name.
+#       Ethan's code will be good for this.
 # open the input file
-f = open(input_path, 'r')
+#f = open(input_path, 'r')
 
 # open the training set file
 training_set_file = open(tr_set, 'w')
@@ -137,7 +139,7 @@ RUN CALCULATIONS ON THE USER'S INPUT
 """
 
 # parse array of molecules from input xyz file
-molecules = xyz_to_molecules(f)
+molecules = xyz_to_molecules(f, config)
 
 # for each molecule from the input xyz file...
 for molecule in molecules:
